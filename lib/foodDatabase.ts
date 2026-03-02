@@ -77,7 +77,7 @@ export const FOOD_DATABASE: FoodItem[] = [
   { id: 'chips', name: 'Potato Chips', category: 'Snacks', emoji: '🥔', calories: 536, protein: 7, carbs: 53, fat: 35, unit: '100g', defaultServing: 0.3 },
 ]
 
-export const FOOD_CATEGORIES = [...new Set(FOOD_DATABASE.map(f => f.category))]
+export const FOOD_CATEGORIES = Array.from(new Set(FOOD_DATABASE.map(f => f.category)))
 
 export function searchFoods(query: string): FoodItem[] {
   if (!query || query.length < 1) return FOOD_DATABASE.slice(0, 12)
